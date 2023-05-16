@@ -1,5 +1,5 @@
 import unittest
-import SquareRootEquation
+from Homeworks.HW2_SquareRoots import SquareRootEquation
 
 
 class GetRootsTestCase(unittest.TestCase):
