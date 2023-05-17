@@ -1,0 +1,49 @@
+{
+  "What is actual Python version?": [
+    "python3",
+    "3"
+  ],
+  "What is actual Django version?": [
+    "4",
+    "four"
+  ],
+  "What encoding do you use with strings?": [
+    "utf-8",
+    "utf8"
+  ],
+  "How many values can the bool type contain?": [
+    "2",
+    "two"
+  ],
+  "What is the result of the expression 11 // 2?": [
+    "5",
+    "five"
+  ],
+  "Which version of Python is last deprecated?": [
+    "2.7",
+    "2"
+  ],
+  "How many bits does the byte type contain?": [
+    "8"
+  ],
+  "What is the result of the expression 2 ** 3?": [
+    "8",
+    "eight"
+  ],
+  "What is the result of the expression 2 ** 3 ** 2?": [
+    "512",
+    "five hundred twelve"
+  ],
+  "How many loop types are there in Python?": [
+    "3",
+    "three"
+  ],
+  "Who is the creator of Python?": [
+    "Guido van Rossum",
+    "Guido",
+    "Rossum"
+  ],
+  "Most simple and light Python IDE": [
+    "IDLE"
+  ]
+}

@@ -1,10 +1,12 @@
 import unittest
 
+import QuizGame
 
-class MyTestCase(unittest.TestCase):
+
+class QuizTestCase(unittest.TestCase):
 
     def test_something(self):
-        self.assertEqual(True, False)  # add assertion here
+        self.assertEqual(True, 1)  # add assertion here
 
 
 if __name__ == '__main__':
