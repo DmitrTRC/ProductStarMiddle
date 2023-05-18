@@ -1,6 +1,5 @@
 import json
 
-
 from dataclasses import dataclass
 from typing import List
 from typing import Dict
@@ -20,7 +19,11 @@ class QuestionGenerator:
         self.get_next_question = self.question_generator()
 
     def _load_quiz_set(self) -> Dict:
-        return json.load(open(self.path, 'r'))
+
+        with open(self.path, 'r') as fd:
+            quiz_dict = json.load(fd)
+
+        return quiz_dict
 
     def question_generator(self):
         for question, answer in self._questions.items():
@@ -47,7 +50,7 @@ class QuizGame:
         self._show_score()
 
     def _ask_question(self) -> str:
-        print(self.current_question.task)
+        print(self.current_question.task, end=' -> ')
         answer: str = self._normalize(input())
         return answer
 
@@ -66,7 +69,7 @@ class QuizGame:
         if is_right:
             print('Right!')
         else:
-            print(f'Wrong! Write one of this answers: {self.current_question.answer[0]} ')
+            print(f'Wrong! Write answers: {self.current_question.answer} ')
 
     def _show_score(self):
         print(f'Right answers: {self._right_answers}')
