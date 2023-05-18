@@ -1,12 +1,14 @@
 import json
 
+
 from dataclasses import dataclass
 from typing import List
+from typing import Dict
 
 
 @dataclass
 class Question:
-    question: str = ''
+    task: str = ''
     answer: List[str] = None
 
 
@@ -14,23 +16,23 @@ class QuestionGenerator:
 
     def __init__(self, path: str):
         self.path: str = path
-        self._questions: List[Question] = self._load_quiz_set()
+        self._questions: Dict = self._load_quiz_set()
         self.get_next_question = self.question_generator()
 
-    def _load_quiz_set(self) -> List[Question]:
+    def _load_quiz_set(self) -> Dict:
         return json.load(open(self.path, 'r'))
 
     def question_generator(self):
-        for question in self._questions:˚
-            yield question
+        for question, answer in self._questions.items():
+            yield Question(question, answer)
 
 
 class QuizGame:
     data_filename = 'questions.json'
 
     def __init__(self):
-        self.current_question = None
         self._questions = QuestionGenerator(self.data_filename)
+        self.current_question: Question = Question()
         self._right_answers = 0
         self._wrong_answers = 0
 
@@ -45,7 +47,8 @@ class QuizGame:
         self._show_score()
 
     def _ask_question(self) -> str:
-        answer: str = self._normalize(input(self.current_question.question))
+        print(self.current_question.task)
+        answer: str = self._normalize(input())
         return answer
 
     def _check_answer(self, answer: str) -> bool:
