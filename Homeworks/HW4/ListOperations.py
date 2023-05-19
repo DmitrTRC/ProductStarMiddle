@@ -101,3 +101,5 @@ if __name__ == '__main__':
 
     for sym, occur in less_sym:
         print(f'{sym}', end = '')
+
+
