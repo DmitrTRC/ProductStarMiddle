@@ -85,3 +85,19 @@ if __name__ == '__main__':
     print('Task 7')
 
 
+    def get_symbol_count(string: str) -> dict:
+        return dict(Counter(string))
+
+
+    def get_8_less_popular_symbols(string: str) -> list:
+        return sorted(get_symbol_count(string).items(), key = lambda x: x[1])[:8]
+
+
+    given_string = 'Python Star Course for beginners and experts for data science and analytics without sql with code'
+
+    print(get_symbol_count(given_string))
+
+    less_sym = get_8_less_popular_symbols(given_string)
+
+    for sym, occur in less_sym:
+        print(f'{sym}', end = '')
